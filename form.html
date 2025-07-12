@@ -13,23 +13,23 @@
 
   <script>
     function submitForm() {
-      const data = {
-        name: document.getElementById("name").value,
-        phone: document.getElementById("phone").value,
-        school: document.getElementById("school").value,
-        tg_id: Telegram.WebApp.initDataUnsafe.user.id,
-        username: Telegram.WebApp.initDataUnsafe.user.username
-      };
+      const params = new URLSearchParams();
+      params.append("name", document.getElementById("name").value);
+      params.append("phone", document.getElementById("phone").value);
+      params.append("school", document.getElementById("school").value);
+      params.append("tg_id", Telegram.WebApp.initDataUnsafe.user.id);
+      params.append("username", Telegram.WebApp.initDataUnsafe.user.username || "N/A");
 
       fetch("https://script.google.com/macros/s/AKfycbxb_QGaJkElu0COv7ZgsPKqe11bgqpHOJ5buijXTmcAmRaQFdJC2uTsx3fdTivjeJuoBw/exec", {
         method: "POST",
-        body: JSON.stringify(data)
+        body: params
       }).then(() => {
         Telegram.WebApp.close();
       }).catch(() => {
         alert("❌ Failed to submit. Try again.");
       });
     }
+
     Telegram.WebApp.ready();
   </script>
 </body>
