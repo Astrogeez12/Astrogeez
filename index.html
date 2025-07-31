@@ -3,218 +3,359 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EthioPass - Educational Resources</title>
-    <meta name="description" content="Access textbooks, short notes, and exam materials for grades 9-12">
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <title>Ethiopass - Ultimate Study Companion for Grade 12 Students</title>
+    <meta name="description" content="Access textbooks, past exams, study materials and interactive quizzes for Ethiopian Grade 12 students">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8fafc;
+        @font-face {
+            font-family: 'GeezFutura';
+            src: url('GeezFutura-Book .ttf') format('truetype');
         }
-        .header-bg {
-            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+        @font-face {
+            font-family: 'zelan';
+            src: url('zelan.ttf') format('truetype');
         }
-        .feature-card {
-            transition: all 0.3s ease;
+        @font-face {
+            font-family: 'GeezFutura-bold';
+            src: url('GeezFutura-Bold.ttf') format('truetype');
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
         }
         .feature-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .quiz-highlight {
+            border-left: 4px solid #4f46e5;
+            background-color: #f5f3ff;
         }
     </style>
 </head>
-<body>
+<body class="font-sans bg-gray-50">
     <!-- Header -->
-    <header class="header-bg text-white p-4 sticky top-0 z-50">
-        <div class="container mx-auto flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                </svg>
-                <h1 class="text-xl font-bold">EthioPass</h1>
+    <header class="gradient-bg text-white">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <i class="fab fa-telegram text-3xl"></i>
+                    <h1 class="text-2xl font-bold">Ethiopass</h1>
+                </div>
+                <a href="https://t.me/Ethiopass_support" class="bg-white text-indigo-600 px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition duration-300">
+                    Contact Support
+                </a>
             </div>
-            
         </div>
     </header>
 
-    <main class="pb-20">
-        <!-- Hero Section -->
-        <section class="header-bg text-white pt-8 pb-12 px-4">
-            <div class="container mx-auto text-center">
-                <h2 class="text-2xl font-bold mb-4">Your Complete Educational Resource Hub</h2>
-                <p class="mb-6">Textbooks, Short Notes & Exam Materials for Grades 9-12</p>
-                <div class="flex justify-center space-x-3">
-                    <a href="https://t.me/Ethiopass_support" class="bg-white/20 hover:bg-white/30 px-4 py-2 rounded-lg transition">
-                        Contact Admin
-                    </a>
-                    <a href="https://t.me/EthioPassChannel" class="bg-white/20 hover:bg-white/30 px-4 py-2 rounded-lg transition">
-                        Updates Channel
-                    </a>
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6" style="font-family: GeezFutura;">እንኳን ወደ Ethiopass ቦት በሰላም መጡ</h1>
+            <p class="text-xl mb-8 max-w-2xl mx-auto" style="font-family: GeezFutura-bold;">በዚህ ቦት <span class="auto"></span></p>
+            <!-- <div class="mb-8 bg-white text-indigo-600 inline-block px-6 py-2 rounded-full font-bold">
+                Only 99 Birr for 1 Year Access
+            </div> -->
+            <a href="https://t.me/Ethiopass_bot" style="font-family: zelan;"  class="bg-white text-indigo-600 px-8 py-3 rounded-lg font-bold text-lg hover:bg-gray-100 transition duration-300 inline-block">
+                አሁኑኑ ለመጀመር
+            </a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-white" style="font-family:GeezFutura ;">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">በEthiopass ምን ምን ያገኛሉ :</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Quiz Feature -->
+                <div class="feature-card bg-white p-6 rounded-xl shadow-md border border-gray-100 transition duration-300">
+                    <div class="text-indigo-600 text-4xl mb-4">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-gray-800">Interactive Quizzes</h3>
+                    <p class="text-gray-600">የፈለጉትን subject እና topic መርጠው ጥያቄ መስራት ይችላሉ </p>
+                </div>
+
+                <!-- Feature 1 -->
+                <div class="feature-card bg-white p-6 rounded-xl shadow-md border border-gray-100 transition duration-300">
+                    <div class="text-indigo-600 text-4xl mb-4">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-gray-800">Textbooks & Guides</h3>
+                    <p class="text-gray-600">ከ9 እስከ 12 ያሉ የተማሪ እና የአስተማሪ መጽሐፍ ያገኛሉ</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card bg-white p-6 rounded-xl shadow-md border border-gray-100 transition duration-300">
+                    <div class="text-indigo-600 text-4xl mb-4">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-gray-800">Past Exams & Models</h3>
+                    <p class="text-gray-600">ከዚህ ቀደም የነበሩ የማትሪክ እና የmodel exam ጥያቄዎችን ያገኛሉ </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card bg-white p-6 rounded-xl shadow-md border border-gray-100 transition duration-300">
+                    <div class="text-indigo-600 text-4xl mb-4">
+                        <i class="fas fa-sticky-note"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-gray-800">Short Notes</h3>
+                    <p class="text-gray-600">ግልጽ እና ለመረዳት ቀላል የሆኑ Shortnote በሁሉም subject ያገኛሉ !</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card bg-white p-6 rounded-xl shadow-md border border-gray-100 transition duration-300">
+                    <div class="text-indigo-600 text-4xl mb-4">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-gray-800">Reference Books</h3>
+                    <p class="text-gray-600">እንደ Extremebook ያሉ አጋዥ መጽሐፍት በሁሉም ትምህርት ያገኛሉ</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-card bg-white p-6 rounded-xl shadow-md border border-gray-100 transition duration-300">
+                    <div class="text-indigo-600 text-4xl mb-4">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-gray-800">Study Planner</h3>
+                    <p class="text-gray-600">ለጥናታችሁ program የሚያወጣ መተግበሪያ ያገኛሉ</p>
+                </div>
+                <div class="feature-card bg-white p-6 rounded-xl shadow-md border border-gray-100 transition duration-300">
+                    <div class="text-indigo-600 text-4xl mb-4">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-gray-800">Exam Strategies</h3>
+                    <p class="text-gray-600">ፈተና ተቀምጣችሁ ጥያቄውን ባታውቁት መልሱን እንዴት መመለስ እንደምትችሉ እንነግራችኋለን</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-card bg-white p-6 rounded-xl shadow-md border border-gray-100 transition duration-300">
+                    <div class="text-indigo-600 text-4xl mb-4">
+                        <i class="fas fa-user-clock"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-gray-800">18/7 Support</h3>
+                    <p class="text-gray-600">በቀን ለ18 ሰአት በሳምንት 7 ቀን እርዳታ መጠየቅ የምትችሉበትን ሁኔታ አመቻችተናል</p>
+                </div>
+                <div class="feature-card bg-white p-6 rounded-xl shadow-md border border-gray-100 transition duration-300">
+                    <div class="text-indigo-600 text-4xl mb-4">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-gray-800">100% Money-Back Guarantee</h3>
+                    <p class="text-gray-600">ቦቱን ለ7 ቀን ሞክራችሁት ካልተመቻችሁ በሳምንት ውስጥ ገንዘባችሁ ተመላሽ እንዲሆን በነጻነት መጠየቅ ትችላላችሁ</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Features -->
-        <section class="py-8 px-4" style="background-color:blueblack">
-            <div class="container mx-auto">
-                <h2 class="text-xl font-bold mb-6 text-center">What You Get</h2>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <!-- Feature 1 -->
-                    <div class="feature-card bg-white p-4 rounded-lg shadow-sm">
-                        <div class="flex items-start space-x-3">
-                            <div class="bg-blue-100 p-2 rounded-lg">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h3 class="font-semibold">Complete Textbooks</h3>
-                                <p class="text-sm text-gray-600">Teachers & Students books for all subjects (Grade 9-12)</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Feature 2 -->
-                    <div class="feature-card bg-white p-4 rounded-lg shadow-sm">
-                        <div class="flex items-start space-x-3">
-                            <div class="bg-green-100 p-2 rounded-lg">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h3 class="font-semibold">Exam Materials</h3>
-                                <p class="text-sm text-gray-600">Matric exams & models from different years</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Feature 3 -->
-                    <div class="feature-card bg-white p-4 rounded-lg shadow-sm">
-                        <div class="flex items-start space-x-3">
-                            <div class="bg-purple-100 p-2 rounded-lg">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h3 class="font-semibold">Clear Short Notes</h3>
-                                <p class="text-sm text-gray-600">Easy-to-understand summaries for each subject</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Feature 4 -->
-                    <div class="feature-card bg-white p-4 rounded-lg shadow-sm">
-                        <div class="flex items-start space-x-3">
-                            <div class="bg-yellow-100 p-2 rounded-lg">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h3 class="font-semibold">Reference Books</h3>
-                                <p class="text-sm text-gray-600">Multiple reference materials to choose from</p>
-                            </div>
-                        </div>
-                    </div>
+    <section class="py-12 quiz-highlight">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h2 class="text-3xl font-bold mb-4 text-gray-800" style="font-family: GeezFutura-bold;font-weight: 500;">የQuiz መተግበሪያ</h2>
+                    <p class="text-lg mb-4 text-gray-600" style="font-family: GeezFutura;">እውቀትዎን ለመገምገም እንዲያስችሎት የሚረዳ በጣም ጠቃሚ የሆነ መተግበሪያ ነው</p>
+                    <ul class="space-y-3" style="font-family: Geezfutura;font-weight: 700;">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-600 mt-1 mr-2"></i>
+                            <span>የፈለጉትን Subject መምረጥ ይችላሉ</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-600 mt-1 mr-2"></i>
+                            <span>በፈለጉት Subject የፈለጉትን Topic መምረጥ ይችላሉ</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-600 mt-1 mr-2"></i>
+                            <span>ጥያቄዎቹ ቀላል ፣ መካከለኛ እና ከባድ በመባል የተከፈሉ ናቸው</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-600 mt-1 mr-2"></i>
+                            <span>መልሱን እንደሞከሩ ፣ ወድያውኑ ትክክል መሆኖን ወይም አለመሆኖን እዛው ይነግሮታል</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-600 mt-1 mr-2"></i>
+                            <span>የመልሱን ማብራሪያም መልሱን ከሞከሩ በኋላ ወድያውኑ ይልክሎታል</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-600 mt-1 mr-2"></i>
+                            <span>ከጨረሱ በኋላ ደግሞ ምን ያህል ጥያቄ እንደሰሩ እና ስንት ትክክል እንዳጉኙ ይነግሮታል</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="photo_2025-07-30_19-18-09.jpg" alt="example of how the user can use quiz in the bot" class="rounded-lg shadow-xl">
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Pricing -->
-        <section class="py-8 px-4">
-            <div class="container mx-auto bg-white rounded-xl shadow-sm p-6">
-                <h2 class="text-xl font-bold mb-4 text-center">One-Time Payment</h2>
-                <div class="text-center mb-6">
-                    <span class="text-3xl font-bold text-blue-600"><s style="text-decoration-color:  #2563eb ;">199 ETB</s> 99 ETB</span>
-                    <span class="text-gray-500">Launch discount</span>
-                    <span class="text-gray-500">/ forever access</span>
+    <section class="py-12 quiz-highlight">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h2 class="text-3xl font-bold mb-4 text-gray-800" style="font-family: GeezFutura-bold;font-weight: 500;">Textbook እና Teacher guide ማግኛ</h2>
+                    <p class="text-lg mb-4 text-gray-600" style="font-family: GeezFutura;">ከ9-12 ያሉ የተለያዩ የተማሪ እና የአስተማሪ መጽሐፍትን በቀላሉ እንዲያገኙ የሚረዳዎት ነው</p>
+                    <ul class="space-y-3" style="font-family: Geezfutura;font-weight: 700;">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-600 mt-1 mr-2"></i>
+                            <span>ከ9-12 ያሉትን የፈለጉትን የNatural ወይም የSocial Subject መምረጥ ይችላሉ</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-600 mt-1 mr-2"></i>
+                            <span>የአዲሱም ሆነ የድሮ Curriculum መርጠው ማግኘት ይችላሉ</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-600 mt-1 mr-2"></i>
+                            <span>የአስተማሪም ሆነ የተማሪ መጽሐፍ መምረጥ ይችላሉ</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-600 mt-1 mr-2"></i>
+                            <span>የፈለፉትን Pdf ከጠየቁ በኋላ በፍጥነት ይደርሶታል</span>
+                        </li>
+                    </ul>
                 </div>
-                <ul class="space-y-2 mb-6">
-                    <li class="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                        </svg>
-                        All textbooks (Grade 9-12)
-                    </li>
-                    <li class="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                        </svg>
-                        Matric exams & models
-                    </li>
-                    <li class="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                        </svg>
-                        Clear short notes
-                    </li>
-                    <li class="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                        </svg>
-                        Multiple reference books
-                    </li>
-                    <li class="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                        </svg>
-                        Lifetime access
-                    </li>
-                </ul>
-                <button id="main-payment-button" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium">
-                    Unlock All Features Now
-                </button>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="photo_2025-07-30_19-41-16.jpg" alt="example of how the user can use browse Books in the bot" class="rounded-lg shadow-xl">
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Support -->
-        <section class="py-8 px-4">
-            <div class="container mx-auto bg-white rounded-xl shadow-sm p-6">
-                <h2 class="text-xl font-bold mb-4 text-center">Need Help?</h2>
-                <p class="text-center mb-4">Contact our admin for any issues or questions</p>
-                <a href="https://t.me/Ethiopass_support" class="block text-center bg-gray-100 hover:bg-gray-200 py-3 rounded-lg font-medium">
-                    @Ethiopass_support on Telegram
-                </a>
+    <section class="py-12 quiz-highlight">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h2 class="text-3xl font-bold mb-4 text-gray-800" style="font-family: GeezFutura-bold;font-weight: 500;">Matric እና Models ማግኛ</h2>
+                    <p class="text-lg mb-4 text-gray-600" style="font-family: GeezFutura;">ከዚህ ቀደም የነበሩ የማትሪክ እና የሞዴል ፈተናዎችን በጥራት ያገኛሉ</p>
+                    <ul class="space-y-3" style="font-family: Geezfutura;font-weight: 700;">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-600 mt-1 mr-2"></i>
+                            <span>ለNatrual እና ለSocial ተማሪዎች የሆኑ የተለያዩ የማትሪክ እና የሞዴል ፈተናዎች የተካተተበት</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-600 mt-1 mr-2"></i>
+                            <span>የቅርብ የሆነው የ2017 ማትሪክ ፈተናን የያዘ</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-600 mt-1 mr-2"></i>
+                            <span>በሁሉም ትምህርቶች ያሉትን ማትሪክ እና ሞዴሎች መጠቀም ያስችሎታል</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-600 mt-1 mr-2"></i>
+                            <span>የፈለጉትን ከጠይቁ በኋላ ፣ የጠየቁት በፍጥነት ይደርሶታል</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="photo_2025-07-30_19-52-23.jpg" alt="example of how the user can use browse Books in the bot" class="rounded-lg shadow-xl">
+                </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
+    <section class="py-12 quiz-highlight">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h2 class="text-3xl font-bold mb-4 text-gray-800" style="font-family: GeezFutura-bold;font-weight: 500;">Shortnote ማግኛ</h2>
+                    <p class="text-lg mb-4 text-gray-600" style="font-family: GeezFutura;">በጥራት የተሰሩ እና በቀላሉ ልትረዷቸው የምትችሏቸውን Shortnote ያገኛሉ</p>
+                    <ul class="space-y-3" style="font-family: Geezfutura;font-weight: 700;">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-600 mt-1 mr-2"></i>
+                            <span>ለሁለቱም ለNatrual እና ለSocial Subject </span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-600 mt-1 mr-2"></i>
+                            <span>አንድን ትምህርት አሳጥረው በሚገባ መልኩ የሚያቀርቡ</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-600 mt-1 mr-2"></i>
+                            <span>ጊዜ ቆጣቢ </span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-600 mt-1 mr-2"></i>
+                            <span>ጥራት ያላቸው ናቸው</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="photo_2025-07-30_19-52-23.jpg" alt="example of how the user can use browse Books in the bot" class="rounded-lg shadow-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-12 quiz-highlight">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h2 class="text-3xl font-bold mb-4 text-gray-800" style="font-family: GeezFutura-bold;font-weight: 500;">Reference book ማግኛ</h2>
+                    <p class="text-lg mb-4 text-gray-600" style="font-family: GeezFutura;">ለጥናታችሁ የሚረዳችሁ እንደ Extremebook ያሉ አጋዥ መጽሐፍትን ያገኛሉ</p>
+                    <ul class="space-y-3" style="font-family: Geezfutura;font-weight: 700;">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-600 mt-1 mr-2"></i>
+                            <span>ለሁለቱም ለNatrual እና ለSocial Subject </span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-600 mt-1 mr-2"></i>
+                            <span>ለጥናት እንዲሁም ጥያቄ ለመስራት የሚረዱ በጣም አስፈላጊ አጋዦች ናቸው </span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-600 mt-1 mr-2"></i>
+                            <span>የሁሉም ትምህርት አጋዥ መጽሐፍት ያገኙበታል </span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="photo_2025-07-31_06-31-33.jpg" alt="example of how the user can use browse Books in the bot" class="rounded-lg shadow-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-12 quiz-highlight">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h2 class="text-3xl font-bold mb-4 text-gray-800" style="font-family: GeezFutura-bold;font-weight: 500;">በተጨማሪ በቦቱ የሚያገኟቸው መተግበሪያዎች</h2>
+                    <p class="text-lg mb-4 text-gray-600" style="font-family: GeezFutura;">በተጨማሪ በቦቱ Study Planner , Ask ai , How to guess in exam የሚባሉ አገልግሎቶችን ያገኛሉ</p>
+                    <ul class="space-y-3" style="font-family: Geezfutura;font-weight: 700;">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-600 mt-1 mr-2"></i>
+                            <span>Study planner :- የፈለጋችሁትን ትምህርት እና ምን ያህል ጊዜ እንደምትሰጡት ለቦቱ ትጽፉለትና ቦቱ የአጠናን Plan ያወጣላችኋል </span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-600 mt-1 mr-2"></i>
+                            <span>Ask ai :- ያልገባችሁን ነገር እዚሁ ቦት ላይ መጠየቅ እና መልስ ማግኘት ትችላላችሁ</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-600 mt-1 mr-2"></i>
+                            <span>How to guess in exam :- ይህንን ደግሞ ቦቱን መጠቀም ስትጀምሩ ታዩታላችሁ (Surprise ነው 😁) </span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="photo_2025-07-31_06-57-40.jpg" alt="example of how the user can use browse Books in the bot" class="rounded-lg shadow-xl">
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Pricing Section -->
+    <section class="py-16 gradient-bg text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6" style="font-family: zelan;">በቅናሽ ዋጋ!</h2>
+            <div class="max-w-md mx-auto bg-white text-gray-800 rounded-xl p-8 shadow-lg">
+                <h3 class="text-2xl font-bold mb-4 text-indigo-600">ለአንድ ዓመት አገልግሎት </h3>
+                <p class="text-5xl font-bold mb-4"><s>299</s> 99 Birr</p>
+            </div>
+        </div>
+    </section>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script>
-        // Initialize Telegram Web App
-        const tg = window.Telegram.WebApp;
-        
-        // Expand the app to full view
-        tg.expand();
-        
-        // Set background color to match Telegram
-        document.body.style.backgroundColor = tg.themeParams.bg_color || '#f8fafc';
-        
-        // Handle payment button click
-        document.getElementById('payment-button').addEventListener('click', () => {
-            tg.showPopup({
-                title: "Unlock All Features",
-                message: "Get lifetime access to all educational materials for 99 ETB",
-                buttons: [
-                    {id: 'pay', type: 'default', text: "Pay Now"},
-                    {type: 'cancel'}
-                ]
-            }, (buttonId) => {
-                if (buttonId === 'pay') {
-                    // Here you would typically initiate payment
-                    // For demo, we'll just show a confirmation
-                    tg.showAlert("Payment processing would be implemented here");
-                }
-            });
-        });
-        
-        // Also handle the main payment button
-        document.getElementById('main-payment-button').addEventListener('click', () => {
-            document.getElementById('payment-button').click();
-        });
+        var typed = new Typed(".auto",{
+            strings : ["የአስተማሪ እና የተማሪ መጻሕፍት","የቀደሙ የማትሪክ እና ሞዴል ፈተናዎች","እዚሁ ራሳችሁን የምትፈትኑበት quiz!","የተለያዩ አጋዥ መጻሕፍት","ያልገባችሁን ማንኛውንም ነገር የምትጠይቁት Ai","Shortnote","በፈተና ጊዜ መልሱን ባታውቁት ምን ማድረግ እናለባችሁ","ለማንበብ እቅድ ማውጫ",""],
+            typeSpeed : 100,
+            backSpeed : 20,
+            loop : true
+        })
     </script>
 </body>
 </html>
